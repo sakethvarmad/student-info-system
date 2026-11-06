@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Information System</title></head>
+<body>
+  <h1>Student Information System</h1>
+
+  <ul style="color:red">
+    {% for e in errors %}<li>{{ e }}</li>{% endfor %}
+  </ul>
+
+  <form method="POST">
+    Name: <input type="text" name="name"><br><br>
+    Department: <input type="text" name="department"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    <button type="submit">Add Student</button>
+  </form>
+
+  <h2>Students</h2>
+  <table border="1" cellpadding="6">
+    <tr><th>ID</th><th>Name</th><th>Department</th><th>Email</th></tr>
+    {% for s in students %}
+    <tr><td>{{ s.id }}</td><td>{{ s.name }}</td><td>{{ s.department }}</td><td>{{ s.email }}</td></tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
